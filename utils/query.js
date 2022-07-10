@@ -3,7 +3,7 @@ function queryBuilder(category, location, wfh) {
   let parsedLocation = location && `${location.trim().replace(/\s+/g, "-")}`;
   let filter = "";
   if (wfh && category && location) {
-    filter = `work-from-home-${parsedCategory}-in-${parsedLocation}`;
+    filter = `work-from-home-${parsedCategory}-internships-in-${parsedLocation}`;
   } else if (wfh && category ) {
     filter = `work-from-home-${parsedCategory}-internships`;
   } else if (category && location) {
