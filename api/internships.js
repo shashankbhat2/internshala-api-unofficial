@@ -14,6 +14,11 @@ module.exports = (req, res) => {
   let category = req.query.category;
   let location = req.query.location;
   let wfh = req.query.wfh;
+  let result = {
+    location,
+    category,
+    wfh
+  }
   res.json(category, location, wfh)
   
   // try {
