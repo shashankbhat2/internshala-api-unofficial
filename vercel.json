@@ -1,0 +1,4 @@
+{
+  "version": 1.0,
+  "routes": [{ "src": "/", "methods": ["GET"], "dest": "/api/internships.js" }]
+}
