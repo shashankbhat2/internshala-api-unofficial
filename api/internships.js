@@ -19,7 +19,7 @@ module.exports = (req, res) => {
     category,
     wfh
   }
-  res.json(category, location, wfh)
+  res.json(result)
   
   // try {
   //   x(`https://internshala.com/internships/`, {
