@@ -14,8 +14,8 @@ module.exports = (req, res) => {
   let category = req.query.category;
   let location = req.query.location;
   let wfh = req.query.wfh;
-  let filter = filteredQuery(category, location, wfh)
-
+  res.json(category, location, wfh)
+  
   try {
     x(`https://internshala.com/internships/${filter}`, {
       items: x(".individual_internship", [
