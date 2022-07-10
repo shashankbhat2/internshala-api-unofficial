@@ -1,4 +1,5 @@
 var Xray = require("x-ray");
+const filteredQuery = require("../utils/query");
 var x = Xray({
   filters: {
     trim: function (value) {
@@ -10,9 +11,13 @@ var x = Xray({
 module.exports = (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate");
+  let category = req.query.category;
+  let location = req.query.location;
+  let wfh = req.query.wfh;
+  let filter = filteredQuery(category, location, wfh)
 
   try {
-    x(`https://internshala.com/internships/`, {
+    x(`https://internshala.com/internships/${filter}`, {
       items: x(".individual_internship", [
         {
           title: ".view_detail_button",
