@@ -17,7 +17,7 @@ module.exports = (req, res) => {
   res.json(category, location, wfh)
   
   try {
-    x(`https://internshala.com/internships/${filter}`, {
+    x(`https://internshala.com/internships/`, {
       items: x(".individual_internship", [
         {
           title: ".view_detail_button",
